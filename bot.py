@@ -13,8 +13,12 @@ logger = logging.getLogger(__name__)
 
 TELEGRAM_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
 ANTHROPIC_API_KEY = os.getenv('ANTHROPIC_API_KEY')
+OMNIROUTE_BASE_URL = os.getenv('OMNIROUTE_BASE_URL', 'https://api.anthropic.com')
 
-client = Anthropic(api_key=ANTHROPIC_API_KEY)
+client = Anthropic(
+    api_key=ANTHROPIC_API_KEY,
+    base_url=OMNIROUTE_BASE_URL
+)
 
 user_conversations = {}
 

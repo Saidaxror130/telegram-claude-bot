@@ -14,15 +14,18 @@ pip install -r requirements.txt
    - Следуйте инструкциям
    - Сохраните полученный токен
 
-3. Получите API ключ от Anthropic:
-   - Зайдите на https://console.anthropic.com/
-   - Создайте API ключ
+3. Получите API ключ от Anthropic или настройте Omniroute:
+   - Для Anthropic: зайдите на https://console.anthropic.com/
+   - Для Omniroute: используйте свой локальный endpoint
 
 4. Создайте файл `.env` в корне проекта:
 ```
 TELEGRAM_BOT_TOKEN=ваш_токен_от_botfather
-ANTHROPIC_API_KEY=ваш_ключ_от_anthropic
+ANTHROPIC_API_KEY=ваш_ключ
+OMNIROUTE_BASE_URL=http://your-omniroute-url/v1
 ```
+
+**Примечание для Omniroute:** Если используете локальный Omniroute (`http://localhost:20128/v1`), вам нужно развернуть Omniroute на публичном сервере или использовать туннель (ngrok, cloudflare tunnel), так как Railway не может подключиться к вашему localhost.
 
 ## Запуск
 
